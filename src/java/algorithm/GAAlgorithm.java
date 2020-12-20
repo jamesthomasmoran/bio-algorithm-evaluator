@@ -60,7 +60,7 @@ public class GAAlgorithm
 
 		final long endTime = System.nanoTime();
 
-		output.setTimeTaken(Math.abs(endTime - startTime));
+		output.setTimeTaken(Math.abs(endTime - startTime) / 1000000);
 
 		output.setFitness(best.getFitness());
 

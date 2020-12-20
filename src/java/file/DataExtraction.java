@@ -14,6 +14,7 @@ public class DataExtraction
 
 	public String printPSOResults(PSOParams params){
 
+		System.out.println(params.getTimeTaken());
 		return "\n" + params.getNumIter() + "," + params.getNumIter() + "," + params.getNeighWeight() +
 				"," + params.getInertiaWeight() + "," + params.getPersonalWeight() +","+params.getGlobalWeight() + "," +
 				params.getMaxMinVelocity() + "," + params.getFitness() + "," + params.getTimeTaken();

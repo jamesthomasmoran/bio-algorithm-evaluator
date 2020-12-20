@@ -52,8 +52,10 @@ public class LocalFitnessCalculator
 		for(int i = 0; i < numRuns; i++){
 			GAParams lastRun = alg.run();
 			average.setFitness(average.getFitness() + lastRun.getFitness());
+			average.setTimeTaken(average.getTimeTaken() + lastRun.getTimeTaken());
 		}
 		average.setFitness(average.getFitness() / numRuns);
+		average.setTimeTaken(average.getTimeTaken() / numRuns);
 		return  average;
 	}
 
@@ -138,8 +140,10 @@ public class LocalFitnessCalculator
 		for(int i = 0; i < numRuns; i++){
 			PSOParams lastRun = alg.run();
 			average.setFitness(average.getFitness() + lastRun.getFitness());
+			average.setTimeTaken(average.getTimeTaken() + lastRun.getTimeTaken());
 		}
 		average.setFitness(average.getFitness() / numRuns);
+		average.setTimeTaken(average.getTimeTaken() / numRuns);
 		return  average;
 	}
 

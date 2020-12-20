@@ -53,10 +53,10 @@ public class PSOAlgorithm
 		}
         long endTime = System.nanoTime();
 
-		output.setTimeTaken(Math.abs(endTime - startTime));
+		output.setTimeTaken(Math.abs(endTime - startTime)/ 1000000);
 
 		output.setFitness(swarm.getBestFitness());
-
+		System.out.println(output.getTimeTaken());
 		return output;
 	}
 }
