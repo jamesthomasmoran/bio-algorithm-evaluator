@@ -33,7 +33,7 @@ public class GAAlgorithm
 
 		GAParams output = new GAParams(params);
 
-		final long startTime = System.currentTimeMillis();
+		final long startTime = System.nanoTime();
 
 		final Engine<DoubleGene, Double> engine = Engine
 			.builder(
@@ -47,11 +47,6 @@ public class GAAlgorithm
 			.offspringSelector(new TournamentSelector<>(params.getTournamentSize()))
 			.alterers(
 					params.getAlterers()[0], Arrays.copyOfRange(params.getAlterers(), 1, params.getAlterers().length)
-				//new Mutator<>(params.getProbMutation())
-				//new GaussianMutator<>(params.getProbMutation()),
-				//new UniformCrossover<>(params.getProbCrossover()))
-				//new SinglePointCrossover<>(probCrossover))
-				//new C<>(param))
 			)
 			.build();
 
@@ -63,9 +58,9 @@ public class GAAlgorithm
 			.peek(statistics)
 			.collect(toBestPhenotype());
 
-		final long endTime = System.currentTimeMillis();
+		final long endTime = System.nanoTime();
 
-		output.setTimeTaken(endTime - startTime);
+		output.setTimeTaken(Math.abs(endTime - startTime));
 
 		output.setFitness(best.getFitness());
 

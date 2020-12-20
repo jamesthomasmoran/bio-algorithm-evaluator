@@ -20,7 +20,7 @@ public class PSOAlgorithm
 
     	PSOParams output = new PSOParams(params);
 
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 		// Create a swarm (using 'src.java.helper.MyParticle' as sample particle
 		// and 'src.java.helper.MyFitnessFunction' as finess function)
 		Swarm swarm = new Swarm(params.getNumParticles()
@@ -51,9 +51,9 @@ public class PSOAlgorithm
 			swarm.evolve();
 			//System.out.println(swarm.toStringStats());
 		}
-        long endTime = System.currentTimeMillis();
+        long endTime = System.nanoTime();
 
-		output.setTimeTaken(endTime - startTime);
+		output.setTimeTaken(Math.abs(endTime - startTime));
 
 		output.setFitness(swarm.getBestFitness());
 
