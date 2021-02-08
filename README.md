@@ -1,35 +1,39 @@
-# Bio Inspired Computing CW1
+# Bio Inspired Algorithm Evaluator
+
 ## General
-The git repo includes the intellij workspace config. You should be able to run a Scenario Runner with no config updates within intellij.
+Project that evaluates the best algorithm parameters to use for the Genetic Algorithm and Particle Swarm Optimisation Algorithm in tackling the Rastringin Problem. All Results are saved to an output csv file.
 
-In the runner package, there are 4 Scenario runner classes that need to be run:
-- GAScenario1Runner (James) - 2nd shortest run time
-- GAScenario2Runner (Paul) - longest run time
-- PSOScenario1Runner (Lewis) - shortest run time
-- PSOScenario2Runner (Paul) - 2nd longest run time
+The Project contains 4 test Runners which evaluate different scenarios:
 
-When a Runner class Run is completed a number of folders will be created in a top level directory <b>output</b>. Send your output folder file to Lewis when your runs have finished.
+- <b>GAScenario1Runner</b> - Evaluates a number of different combinations of population size and number of iterations for the Genetic Algorithm. Each combination has a total 10,000 evaluations per run.
+- <b>PSOScenario1Runner</b> - Evaluates a number of different combinations of number of particles and number of iterations for the Particle Swarm Optimisation Algorithm. Each combination has a total 10,000 evaluations per run.
+- <b>GAScenario2Runner</b> - Evaluates a population size of 1000 and a number of iterations of 1000 for the Genetic Algorithm. Each Run of the algorithm will have a total 1,000,000 evaluations
+- <b>PSOScenario2Runner</b> - Evaluates a number of particles of 1000 and a number of iterations of 1000 for the Particle Swarm Optimisation Algorithm. Each Run of the algorithm will have a total 1,000,000 evaluations
+
+## Technologies
+Project is Created with:
+- Java version: 8
+- Jenetics Library version: 4.2.0
+- JSwarm  Library version: 2.08
 
 ## Package Descriptions
 
-### config
-contains config files (not used)
-
 ### dependency
-contains the 2 algorithm dependency jars
+contains the 2 algorithm dependency jars, Jenetics and JSwarm.
 
-## java/algorithm
+### algorithm
 Contains code that directly invokes the GA and PSO algorithm. 
 
-## java/file
+### file
 Contains all code required for creating and writing to files
 
-## java/helper
+### helper
 Contains all code to determine fitness and compare fitness
 
-## java/runner
+### runner
 Contains classes to run that will undertake the test for each scenario
 
-## java/wrapper
+### wrapper
 Contains Wrapper Objects for parameters
+
  
